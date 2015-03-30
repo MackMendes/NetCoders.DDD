@@ -1,0 +1,98 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{C4911656-195B-4CFB-8A7B-E688A55BC78F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{5ECB631E-0EE7-4C2C-9002-31A11EDF92ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{D99EEDCC-56A1-401C-9B09-3F7E0710F5AB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{11C54C18-EF67-46F3-80A9-0C7C8201BC1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "src\Domain\Domain.csproj", "{D808B4E0-EB70-4811-B50B-7C4F74BC3627}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "src\Repositories\Repositories.csproj", "{D863B64E-0275-4358-8C8A-3AFDEBD0CA16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoC", "src\IoC\IoC.csproj", "{30E53A1E-EB7F-4175-8104-3E6A03940694}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "src\Application\Application.csproj", "{39EC7B81-4150-4777-9EBC-FF79666A1CA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoders.MicroErpDDD.UI.Mvc", "src\NetCoders.MicroErpDDD.UI.Mvc\NetCoders.MicroErpDDD.UI.Mvc.csproj", "{679D40C8-623F-4649-9610-9F80904BC085}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Test", "test\Domain.Test\Domain.Test.csproj", "{3132AFFC-D24C-4672-AB73-2C05558E0C5A}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://charlesmendes.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = src\\Domain\\Domain.csproj
+		SccProjectTopLevelParentUniqueName1 = NetCoders.MicroErpDDD.sln
+		SccProjectName1 = src/Domain
+		SccLocalPath1 = src\\Domain
+		SccProjectUniqueName2 = src\\Repositories\\Repositories.csproj
+		SccProjectTopLevelParentUniqueName2 = NetCoders.MicroErpDDD.sln
+		SccProjectName2 = src/Repositories
+		SccLocalPath2 = src\\Repositories
+		SccProjectUniqueName3 = src\\IoC\\IoC.csproj
+		SccProjectTopLevelParentUniqueName3 = NetCoders.MicroErpDDD.sln
+		SccProjectName3 = src/IoC
+		SccLocalPath3 = src\\IoC
+		SccProjectUniqueName4 = src\\Application\\Application.csproj
+		SccProjectTopLevelParentUniqueName4 = NetCoders.MicroErpDDD.sln
+		SccProjectName4 = src/Application
+		SccLocalPath4 = src\\Application
+		SccProjectUniqueName5 = src\\NetCoders.MicroErpDDD.UI.Mvc\\NetCoders.MicroErpDDD.UI.Mvc.csproj
+		SccProjectTopLevelParentUniqueName5 = NetCoders.MicroErpDDD.sln
+		SccProjectName5 = src/NetCoders.MicroErpDDD.UI.Mvc
+		SccLocalPath5 = src\\NetCoders.MicroErpDDD.UI.Mvc
+		SccProjectUniqueName6 = test\\Domain.Test\\Domain.Test.csproj
+		SccProjectTopLevelParentUniqueName6 = NetCoders.MicroErpDDD.sln
+		SccProjectName6 = test/Domain.Test
+		SccLocalPath6 = test\\Domain.Test
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D808B4E0-EB70-4811-B50B-7C4F74BC3627}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D808B4E0-EB70-4811-B50B-7C4F74BC3627}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D808B4E0-EB70-4811-B50B-7C4F74BC3627}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D808B4E0-EB70-4811-B50B-7C4F74BC3627}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D863B64E-0275-4358-8C8A-3AFDEBD0CA16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D863B64E-0275-4358-8C8A-3AFDEBD0CA16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D863B64E-0275-4358-8C8A-3AFDEBD0CA16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D863B64E-0275-4358-8C8A-3AFDEBD0CA16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30E53A1E-EB7F-4175-8104-3E6A03940694}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30E53A1E-EB7F-4175-8104-3E6A03940694}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30E53A1E-EB7F-4175-8104-3E6A03940694}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30E53A1E-EB7F-4175-8104-3E6A03940694}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39EC7B81-4150-4777-9EBC-FF79666A1CA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39EC7B81-4150-4777-9EBC-FF79666A1CA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39EC7B81-4150-4777-9EBC-FF79666A1CA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39EC7B81-4150-4777-9EBC-FF79666A1CA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{679D40C8-623F-4649-9610-9F80904BC085}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{679D40C8-623F-4649-9610-9F80904BC085}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{679D40C8-623F-4649-9610-9F80904BC085}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{679D40C8-623F-4649-9610-9F80904BC085}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3132AFFC-D24C-4672-AB73-2C05558E0C5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3132AFFC-D24C-4672-AB73-2C05558E0C5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3132AFFC-D24C-4672-AB73-2C05558E0C5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3132AFFC-D24C-4672-AB73-2C05558E0C5A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D808B4E0-EB70-4811-B50B-7C4F74BC3627} = {C4911656-195B-4CFB-8A7B-E688A55BC78F}
+		{D863B64E-0275-4358-8C8A-3AFDEBD0CA16} = {5ECB631E-0EE7-4C2C-9002-31A11EDF92ED}
+		{30E53A1E-EB7F-4175-8104-3E6A03940694} = {5ECB631E-0EE7-4C2C-9002-31A11EDF92ED}
+		{39EC7B81-4150-4777-9EBC-FF79666A1CA3} = {D99EEDCC-56A1-401C-9B09-3F7E0710F5AB}
+		{679D40C8-623F-4649-9610-9F80904BC085} = {11C54C18-EF67-46F3-80A9-0C7C8201BC1A}
+		{3132AFFC-D24C-4672-AB73-2C05558E0C5A} = {C4911656-195B-4CFB-8A7B-E688A55BC78F}
+	EndGlobalSection
+EndGlobal
