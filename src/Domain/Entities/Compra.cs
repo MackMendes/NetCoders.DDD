@@ -7,6 +7,8 @@ namespace NetCoders.MicroErpDD.Domain.Entities
 {
     public sealed class Compra
     {
+        #region Construtor
+
         internal Compra(int idCompra, Fornecedor fornecedor, DateTime dataCadastro)
         {
             IdCompra = idCompra;
@@ -24,6 +26,10 @@ namespace NetCoders.MicroErpDD.Domain.Entities
            this.Itens = new List<CompraItem>();
         }
 
+        #endregion
+
+        #region Propriedades
+
         public int IdCompra { get; set; }
 
         /// <summary>
@@ -40,11 +46,15 @@ namespace NetCoders.MicroErpDD.Domain.Entities
         /// Quem define os itens da compra? A Compra! Então... private!
         /// </summary>
         public IList<CompraItem> Itens { get; private set; }
-
+        
         /// <summary>
         /// Quem define Endereco????
         /// </summary>
         public Endereco Endereco { get; private set; }
+
+        #endregion
+
+        #region Métodos
 
         /// <summary>
         /// Altera Fornecedor, exporto para todos.
@@ -99,5 +109,7 @@ namespace NetCoders.MicroErpDD.Domain.Entities
         {
             this.Endereco = endereco;
         }
+
+        #endregion
     }
 }
