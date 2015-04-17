@@ -5,6 +5,8 @@ namespace NetCoders.MicroErpDD.Domain.Entities
 {
     public sealed class CompraItem
     {
+        #region Construtor
+
         internal CompraItem(int idCompraItem, Compra compra, Produto produto, int quantidade, decimal preco)
         {
             this.IdCompraItem = idCompraItem;
@@ -24,6 +26,10 @@ namespace NetCoders.MicroErpDD.Domain.Entities
             AlterarProduto(produto, quantidade, preco);
         }
 
+        #endregion
+
+        #region Propriedades
+
         public int IdCompraItem { get; set; }
 
         public Compra Compra { get; private set; }
@@ -35,6 +41,10 @@ namespace NetCoders.MicroErpDD.Domain.Entities
         public decimal Preco { get; private set; }
 
         public decimal Total { get { return Quantidade * Preco; } }
+
+        #endregion
+
+        #region Método
 
         /// <summary>
         /// Esse método tem o nome de AlterarProduto mas, serve para Validar o Produto e seta os valores das Propriedades Privadas
@@ -57,5 +67,7 @@ namespace NetCoders.MicroErpDD.Domain.Entities
             this.Quantidade = quantidade;
             this.Preco = preco;
         }
+
+        #endregion
     }
 }

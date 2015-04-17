@@ -4,6 +4,8 @@ namespace NetCoders.MicroErpDD.Domain.Entities
 {
     public sealed class Cliente
     {
+        #region Construtor
+
         public Cliente(string nome_, string cpf_)
         {
             this.AlterarNome(nome_);
@@ -14,11 +16,19 @@ namespace NetCoders.MicroErpDD.Domain.Entities
             this.Cpf = cpf_;
         }
 
+        #endregion
+
+        #region Propriedades
+
         public int IdCliente { get; set; }
 
         public string Nome { get; private set; }
 
         public string Cpf { get; private set; }
+
+        #endregion
+
+        #region Método
 
         public void AlterarNome(string nome)
         {
@@ -37,5 +47,7 @@ namespace NetCoders.MicroErpDD.Domain.Entities
             this.ValidarCpf(cpf);
             this.Cpf = cpf;
         }
+
+        #endregion
     }
 }
