@@ -5,6 +5,8 @@ namespace NetCoders.MicroErpDD.Domain.Entities
 {
     public sealed class Produto
     {
+        #region Construtor
+
         /// <summary>
         /// Esse construtor ficou como "internal", para somente a Factory, que esta dentro deste projeto, utilizar para fabricar essa classe Produto sem 
         /// ter que utilizar o outro construtor, que possiu validações.
@@ -26,9 +28,18 @@ namespace NetCoders.MicroErpDD.Domain.Entities
         {
             AlterarNome(nome);
         }
+
+        #endregion
+
+        #region Propriedades
+
         public int IdProduto { get; set; }
 
         public string Nome { get; private set; }
+
+        #endregion
+
+        #region Métodos
 
         public void AlterarNome(string nome)
         {
@@ -37,5 +48,7 @@ namespace NetCoders.MicroErpDD.Domain.Entities
 
             this.Nome = nome;
         }
+
+        #endregion
     }
 }

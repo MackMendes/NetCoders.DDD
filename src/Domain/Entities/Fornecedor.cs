@@ -4,6 +4,8 @@ namespace NetCoders.MicroErpDD.Domain.Entities
 {
     public sealed class Fornecedor
     {
+        #region Construtur
+
         internal Fornecedor(int idFornecedor, string nome)
         {
             IdFornecedor = idFornecedor;
@@ -20,9 +22,17 @@ namespace NetCoders.MicroErpDD.Domain.Entities
             this.AlterarNome(nome);
         }
 
+        #endregion
+
+        #region Propriedades
+
         public int IdFornecedor { get; set; }
 
         public string Nome { get; private set; }
+
+        #endregion
+
+        #region Métodos
 
         public void AlterarNome(string nome)
         {
@@ -31,5 +41,7 @@ namespace NetCoders.MicroErpDD.Domain.Entities
 
             this.Nome = nome;
         }
+
+        #endregion
     }
 }
