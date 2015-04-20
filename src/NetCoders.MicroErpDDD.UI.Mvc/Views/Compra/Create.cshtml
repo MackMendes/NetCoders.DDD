@@ -1,0 +1,113 @@
+﻿@using NetCoders.MicroErpDDD.UI.Mvc.Models
+@model CompraModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Cadastro de Compra</h2>
+@using (Ajax.BeginForm("Create", "Compra", new AjaxOptions
+{
+    Confirm = "Deseja salvar a compra?",
+    HttpMethod = "POST"
+}))
+{
+    <div class="form-inline espaco" role="form">
+        <div>
+            <div class="form-group">
+                <p class="form-control-static width-100">
+                    @Html.LabelFor(x => x.IdFornecedor, new { @class = "control-label" })
+                </p>
+                @Html.DropDownListFor(x => x.IdFornecedor, ViewBag.Fornecedores as SelectList, new { @class = "form-control" })
+                <input type="submit" value="Salvar Compra" class="btn btn-success" onclick="definirIndices()" />
+            </div>
+        </div>
+        <div>
+            <div class="form-group">
+                <p class="form-control-static width-100">
+                    @Html.Label("Produtos", new { @class = "control-label" })
+                </p>
+                @Html.DropDownList("Produtos", ViewBag.Produtos as SelectList, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label class="sr-only" for="preco">Preço</label>
+                <input type="text" id="preco" class="form-control" placeholder="Preço" size="6" />
+            </div>
+            <div class="form-group">
+                <label class="sr-only" for="quantidade">Quantidade</label>
+                <input type="text" id="quantidade" placeholder="Quantidade" class="form-control" size="8" />
+            </div>
+            <div class="form-group">
+                <input type="button" value="Adicionar" id="Adicionar" class="btn" />
+            </div>
+        </div>
+    </div>
+    <div>
+        @Html.Partial("Item", Model == null ? new List<CompraItemModel>() : Model.Itens)
+    </div>
+    <div class="alert">
+        @Html.ValidationSummary()
+    </div>
+}
+@section css{
+    <style type="text/css">
+        .width-100 {
+            width: 100px;
+        }
+
+        .espaco {
+            padding-bottom: 10px;
+        }
+    </style>
+}
+@section scripts{
+    <script src="~/Scripts/jQuery.tmpl.min.js"></script>
+    <script id="linhaTabela" type="text/html">
+        <tr>
+            <td>
+                ${ProdutoNome}
+                <input type="hidden" name="Itens[].IdProduto" value="${IdProduto}" />
+                <input type="hidden" name="Itens[].ProdutoNome" value="${ProdutoNome}" />
+            </td>
+            <td>
+                <input type="text" name="Itens[].Preco" value="${Preco}" class="form-control input-sm" />
+            </td>
+            <td>
+                <input type="text" name="Itens[].Quantidade" value="${Quantidade}" class="form-control input-sm" />
+            </td>
+            <td class="text-center">
+                <a href="#" role="button" class="btn btn-danger" onclick=" excluir(this) ">Excluir</a>
+            </td>
+        </tr>
+    </script>
+    <script type="text/javascript">
+        var linhas = $("table > tbody > tr").length;
+        var CompraItem = function (idProduto, produtoNome, quantidade, preco) {
+            this.IdProduto = idProduto;
+            this.ProdutoNome = produtoNome;
+            this.Quantidade = quantidade;
+            this.Preco = preco;
+        };
+
+        $(function () {
+            $("#Adicionar").click(function () {
+                var compraItem = new CompraItem($("#Produtos").val(), $("#Produtos option:selected").text(), $("#quantidade").val(), $("#preco").val());
+                $("table > tbody").append($("#linhaTabela").tmpl(compraItem));
+            });
+        });
+
+        function excluir(btn) {
+            $(btn).parents("tr").remove();
+        }
+
+        function definirIndices() {
+            var index = 0;
+            $.each($("table > tbody > tr"), function() {
+                $(this).find(":input[name*='IdProduto']").prop("name", "Itens[" + index + "].IdProduto");
+                $(this).find(":input[name*='ProdutoNome']").prop("name", "Itens[" + index + "].ProdutoNome");
+                $(this).find(":input[name*='Preco']").prop("name", "Itens[" + index + "].Preco");
+                $(this).find(":input[name*='Quantidade']").prop("name", "Itens[" + index + "].Quantidade");
+                index++;
+            });
+        }
+    </script>
+}
