@@ -1,0 +1,7 @@
+﻿CREATE TABLE dbo.Produto
+(
+	IdProduto INT NOT NULL IDENTITY,
+	Nome VARCHAR(200) NOT NULL,
+	CONSTRAINT PK_Produto
+		PRIMARY KEY (IdProduto)
+)
