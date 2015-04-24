@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Base\RepositoryBase.cs" />
     <Compile Include="CompraItemRepository.cs" />
+    <Compile Include="CompraRepository.cs" />
     <Compile Include="FornecedorRepository.cs" />
     <Compile Include="ProdutoRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

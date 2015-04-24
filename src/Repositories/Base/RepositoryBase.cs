@@ -10,7 +10,7 @@ namespace NetCoders.MicroErpDDD.Infra.Repositories.Base
 
         protected RepositoryBase()
         {
-            Connection = new Connection(nameOfConnection: ""); 
+            Connection = new Connection(nameOfConnection: "NetCodersMicroErp"); 
         }
 
         public abstract TEntity Get(int id);
