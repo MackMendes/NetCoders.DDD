@@ -35,6 +35,8 @@ namespace NetCoders.MicroErpDDD.Infra.IoC.App_Start
         private static void InitializeContainer(Container container)
         {
             RepositoryContainer.Initialize(container, Lifestyle.Singleton);
+            ApplicationServiceContainer.Initialize(container, Lifestyle.Singleton);
+            DomainServiceContainer.Initialize(container, Lifestyle.Singleton);
         }
     }
 }

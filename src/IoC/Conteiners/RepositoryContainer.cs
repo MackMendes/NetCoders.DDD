@@ -10,8 +10,8 @@ namespace NetCoders.MicroErpDDD.Infra.IoC.Conteiners
     {
         public static void Initialize(Container container, Lifestyle lifestyle)
         {
-            container.Register(typeof(IRepositoryBase<>), typeof(RepositoryBase<>), lifestyle);
             container.Register<IProdutoRepository, ProdutoRepository>(lifestyle);
+            container.Register<ICompraRepository, CompraRepository>(lifestyle);
             container.Register<ICompraItemRepository, CompraItemRepository>(lifestyle);
             container.Register<IFornecedorRepository, FornecedorRepository>(lifestyle);
         }
