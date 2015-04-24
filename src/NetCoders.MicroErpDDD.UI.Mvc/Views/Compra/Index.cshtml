@@ -1,0 +1,35 @@
+﻿@model IEnumerable<NetCoders.MicroErpDDD.UI.Mvc.Models.CompraModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered table-hover table-responsive table-condensed table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FornecedorNome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataCadastro)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayTextFor(modelItem => item.FornecedorNome)
+            </td>
+            <td>
+                @Html.DisplayTextFor(modelItem => item.DataCadastro)
+            </td>
+        </tr>
+    }
+
+</table>

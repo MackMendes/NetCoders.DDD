@@ -1,0 +1,47 @@
+﻿@model IEnumerable<NetCoders.MicroErpDDD.UI.Mvc.Models.CompraItemModel>
+
+<table class="table table-bordered table-condensed table-hover table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdProduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Preco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantidade)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            var indice = 0;
+            foreach (var item in Model)
+            {
+                <tr id="@indice">
+                    <td>
+                        @Html.DisplayTextFor(models => item.ProdutoNome)
+                        @Html.Hidden("Itens[" + indice + "].IdProduto", item.IdProduto)
+                        @Html.Hidden("Itens[" + indice + "].ProdutoNome", item.ProdutoNome)
+                        @Html.ValidationMessageFor(models => item.IdProduto)
+                    </td>
+                    <td>
+                        @Html.TextBox("Itens[" + indice + "].Preco", item.Preco, new { @class = "form-control input-sm" })
+                        @Html.ValidationMessageFor(models => item.Preco)
+                    </td>
+                    <td>
+                        @Html.TextBox("Itens[" + indice + "].Quantidade", item.Quantidade, new { @class = "form-control input-sm" })
+                        @Html.ValidationMessageFor(models => item.Quantidade)
+                    </td>
+                    <td class="text-center">
+                        @*<input type="button" value="Excluir" class="btn btn-danger" />*@
+                        <a href="#" role="button" class="btn btn-danger" onclick="excluir(this)">Excluir</a>
+                    </td>
+                </tr>
+                indice++;
+            }
+        }
+    </tbody>
+</table>
